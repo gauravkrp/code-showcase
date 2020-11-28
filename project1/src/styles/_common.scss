@@ -1,0 +1,441 @@
+/* Common CSS */
+
+/*! purgecss start ignore */
+
+/* scrollbar properties */
+/* width */
+::-webkit-scrollbar {
+  width: 9px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+  border-radius: 2px; 
+}
+
+.thinScrollBar-6{
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #bbb;
+  }
+}
+
+body {
+  background-color: transparent;
+  font-family: 'Nunito Sans', 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  margin: 0;
+  *{
+    font-family: 'Nunito Sans', 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    box-sizing: border-box;
+  }
+}
+
+/*! purgecss end ignore */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+@mixin zero-pm {
+  padding: 0;
+  margin: 0;
+}
+@mixin reset-list {
+  @include zero-pm();
+  list-style: none;
+}
+@mixin pseudoAB{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@for $i from 1 through 100{
+  .mb#{$i}{ // grab the n0th mb
+    margin-bottom: #{$i}px;
+  }
+}
+@for $i from 1 through 100{
+  .mt#{$i}{
+    margin-top: #{$i}px;
+  }
+}
+@for $i from 1 through 100{
+  .pb#{$i}{
+    padding-bottom: #{$i}px;
+  }
+}
+@for $i from 1 through 100{
+  .pt#{$i}{
+    padding-top: #{$i}px;
+  }
+}
+@for $i from 1 through 100{
+  .pl#{$i}{
+    padding-left: #{$i}px;
+  }
+}
+@for $i from 1 through 100{
+  .pr#{$i}{
+    padding-right: #{$i}px;
+  }
+}
+@for $i from 1 through 100{
+  .ml#{$i}{
+    margin-left: #{$i}px;
+  }
+}
+@for $i from 1 through 100{
+  .mr#{$i}{
+    margin-right: #{$i}px;
+  }
+}
+@for $i from 1 through 100{
+  .plr#{$i}{
+    padding-left: #{$i}px;
+    padding-right: #{$i}px;
+  }
+}
+@for $i from 1 through 100{
+  .ptb#{$i}{
+    padding-top: #{$i}px;
+    padding-bottom: #{$i}px;
+  }
+}
+@for $i from 1 through 100{
+  .mlr#{$i}{
+    margin-left: #{$i}0px;
+    margin-right: #{$i}0px;
+  }
+}
+@mixin box-shadow($x:0, $y:0, $blur-radius:2px, $spread-radius:2px, $alpha:0.1) {
+  box-shadow: $x $y $blur-radius $spread-radius rgba($color: $color-black, $alpha: $alpha);
+}
+@mixin alignDisplay($align: center, $justify:flex-start, $flexDir:row, $flexWrap: wrap){
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $flexDir;
+  flex-wrap: $flexWrap;
+}
+@mixin userSelectNone {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin coverBG($url){
+  background: transparent url(#{$url}) center center/cover no-repeat;
+}
+
+a,p,ul,li,h1,h2,h3,h4,h5,h6{
+  @include zero-pm();
+}
+ul,li {
+  @include reset-list();
+}
+.hideSB::-webkit-scrollbar { width: 0 !important }
+a{
+  text-decoration: none;
+  color: $color-black;
+  cursor: pointer;
+  display: inline-block;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+button, .btn{
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;  
+  @include userSelectNone();
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  &:hover{
+    opacity: 1;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  &[disabled]{
+    opacity: 0.7;
+    cursor: default;
+    filter: grayscale(1);
+  }
+}
+
+.btn-eg{
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 21px;
+  border-radius: 4px;
+  letter-spacing: 0.12px;
+  height: 50px;
+  line-height: 50px;
+  box-shadow: rgba(50, 50, 50, 0.1) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 6px 16px;
+  &:hover{
+    color: initial;
+    box-shadow: rgba(50, 50, 50, 0.2) 0px 16px 32px, rgba(0, 0, 0, 0.1) 0px 8px 16px;
+  }  
+}
+
+.btn-outline{
+  border: 1px solid #ccc;
+  &:hover{
+    background: $color-blue;
+    color: #ffffff;
+  } 
+}
+
+.btn-sleek{
+  font-size: 14px;
+  height: 34px;
+  line-height: 32px;
+  padding: 0 16px;
+}
+
+.btn-pri{
+  background: $color-red;
+  color: $color-white !important;
+  &:hover{
+    color: $color-white !important;
+  }
+}
+
+.btn-sec{
+  background: $color-white;
+  font-weight: 500;
+}
+
+.btn-blue{
+  background: $color-blue;
+  font-weight: 500;
+  color: $color-white;
+  &:hover{
+    color: $color-white;
+  }
+}
+
+.btn-red{
+  background: $color-red;
+  font-weight: 500;
+  color: $color-white;
+  &:hover{
+    color: $color-white;
+  }
+}
+
+.btn-black{
+  background: $color-black;
+  font-weight: 500;
+  color: $color-white;
+  &:hover{
+    color: $color-white;
+  }
+}
+
+.btn-large{
+  width: 300px;
+  height: 50px;
+}
+
+//detect internet
+.internet-detect{
+  position: fixed;
+  z-index: 10000;
+  .internet-error{
+    z-index: 10000;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background: $color-orange;
+    padding: 10px 16px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 16px 2px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    max-width: 500px;
+    width: 90%;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;    
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+  }
+}
+
+.tag-pill{
+  @include setFont(14px, 1.4, 600);
+  background: rgba($color: $color-blue, $alpha: 0.2);
+  padding: 6px 20px;
+  border-radius: 4px;
+}
+
+.no-results-div{
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  img{
+    width: 100%;
+  }
+  p{
+    margin-top: 20px;
+    @include setFont(16px, 1.4, 600);
+    color: #000000;
+  }
+}
+
+textarea{
+  height: auto !important;
+  line-height: 1.4 !important;
+}
+
+.formErrorWrap{
+  i{
+    margin-right: 5px;
+    position: relative;
+    top: -2px;
+  }
+}
+
+//modal
+.modal-heading{
+  @include setFont(18px, 1.4, 600);
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+//action-menu on tables
+.status-action-wrapper{
+  display: flex;
+  position: relative;
+}
+.records-action{
+  display: none;
+  position: absolute;
+  margin-left: 6px;  
+  right: 0;
+  top: 0;
+  z-index: 10;
+  background: $color-white;
+  box-shadow: 1px 1px 24px 2px rgba(0,0,0,0.1);
+  border-radius: 2px;
+  width: 120px;
+  transition: 0.2s ease-in-out;
+  &.last-record-actions{
+    top: unset;
+    bottom: 0;
+  }
+  li{
+    line-height: 36px;
+    height: 36px;
+    &:not(:last-child) {
+      border-bottom: 1px solid #e6e6ff;
+    }
+    &:hover{
+      background: #e6e6ff;
+    }
+    a{
+      display: block;
+      padding: 0 16px;
+      &.approve{
+        color: $color-green;
+      }
+      &.reject{
+        color: $color-red;
+      }
+      &.request-info{
+        color: $color-orange;
+      }
+    }
+  }
+  &:hover{
+    display: block;
+  }
+}
+.action-menu{
+  .menu-drawer{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    img{
+      width: 14px;
+    }
+    &:hover + .records-action{
+      display: block;
+    }
+  }
+}
+
+// table
+.MuiTableCell-sizeSmall {
+  padding: 15px 20px 15px;
+}
+.MuiTableCell-head {
+  line-height: 1.45;
+}
+
+.table-content{
+  &-wrapper{
+    position: relative;
+  }
+  &-heading{
+    @include setFont(16px, 1.4, 600);
+    color: #000000;
+    margin-bottom: 10px;
+    @include alignDisplay(center);
+    &-logo{
+      display: inline-block;
+      height: 40px;
+      margin-right: 20px;
+      img{
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+  &-main{
+    @include setFont(14px, 1.4, 400);
+    color: $color-text-grey;
+    max-width: 500px;
+    margin-bottom: 10px;
+  }
+  &-link{
+    @include setFont(14px, 1.4, 400);
+    color: $color-blue;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &-field{
+    span{
+      display: inline-block;
+      &:first-child{
+        width: 80px;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+Sitemap: https://investor.aavejak.com/sitemap.xml
+
+User-agent: *
+Allow: /login
+Allow: /signup
+Disallow: /*

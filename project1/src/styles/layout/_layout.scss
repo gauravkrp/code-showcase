@@ -1,0 +1,57 @@
+// layout css
+.app-origin-wrapper{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: $color-white;
+  @include alignDisplay(flex-start, flex-start);
+  flex: 1;
+  .layout-sidebar{
+    background: #F9F9F9;
+    background: #003956;
+    background: #16161d;
+    width: 240px;
+    height: fit-content;
+    min-height: 100%;
+    z-index: 2001;
+    padding: 25px 0;
+    border-right: 1px solid #f0f0f0;
+    position: relative;
+    @include alignDisplay(flex-start, space-between, column);
+    flex: 1;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      background-color: transparent;
+      bottom: 0;
+      width: 240px;
+      left: 0;
+      z-index: 0;
+      box-shadow: inset -1px 0 3px 0 rgba(0,0,0,0.1);
+      pointer-events: none;
+    }
+  }
+  .layout-mainblock{
+    width: calc(100% - 240px);
+    height: 100vh;
+    overflow-y: scroll;
+    background: $color-white;
+    position: relative;
+    .app-main-container{
+      padding: 25px 40px;
+      .app-page-Container{
+        .app-page-Header{
+          border-bottom: 1px solid #e6e6e6;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          @include alignDisplay();
+          .app-page-heading{
+            @include setFont(18px, 1.4, 400);
+            color: $color-black;
+          }
+        }
+      }
+    }
+  }
+}
