@@ -1,0 +1,106 @@
+/* Modals */
+.modalWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: calc(100%);
+  height: calc(100vh);
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  cursor: default;
+  .modalClose {
+    background: #ffffff;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    padding: 0;
+    border-radius: 50%;
+    opacity: 0.7;
+    opacity: 0.9;
+    position: absolute;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 50;
+    img {
+      width: 16px !important;
+      height: 16px;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .appModalInnerWrap {
+    min-height: 100px;
+    max-height: 600px;
+    //max-height: fit-content;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: #ffffff;
+    min-width: 500px;
+    max-width: 900px;
+    position: relative;
+    border-radius: 2px;
+    box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.75);
+    filter: blur(0);
+    //transform: translateY(-10px);
+    transform: scale(0);
+    cursor: default;
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.2s ease-in-out;
+    &.fullHeight {
+      height: 100%;
+    }
+    &.modalShown {
+      transform: scale(1);
+    }
+    .modalBody {
+      padding: 30px 36px;
+      .modalContent {
+        overflow-y: scroll;
+      }
+    }
+  }
+}
+
+.modal.off {
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(8px);
+  transform: scale(0.33);
+  box-shadow: 1rem 0 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .modalWrapper {
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    overflow: hidden;
+    padding: 0;
+    .appModalInnerWrap {
+      max-height: 90%;
+      margin: 20px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      .modalClose {
+        background: #ffffff;
+        right: 5px;
+        top: 5px;
+      }
+      .modalBody {
+        padding: 30px 20px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+    }
+  }
+}

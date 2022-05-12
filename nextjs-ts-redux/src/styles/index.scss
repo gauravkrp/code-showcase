@@ -1,0 +1,32 @@
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~react-toastify/dist/ReactToastify.css';
+@import '~react-phone-input-2/lib/style.css';
+/*! purgecss start ignore */
+// @import "~react-phone-input-2/lib/style.css";
+// @import '~react-quill/dist/quill.snow.css';
+// @import '~react-toastify/dist/ReactToastify.min.css';
+/*! purgecss end ignore */
+@import '~nprogress/nprogress.css';
+
+@import '../styles/base/nprogress.scss';
+@import '../styles/base/config';
+@import '../styles/base/colors';
+@import '../styles/base/mixins';
+@import '../styles/base/typography';
+@import '../styles/base/common';
+@import '../styles/base/tables';
+@import '../styles/base/buttons';
+@import '../styles/base/form';
+@import '../styles/base/iconFont';
+
+@import '../styles/layout/header';
+@import '../styles/layout/footer';
+@import '../styles/layout/sidebar';
+@import '../styles/layout/layout';
+
+@import '../styles/pages/auth';
+@import '../styles/pages/dashboard';
+@import '../styles/pages/media';
+
+// @import './react-phone-input.css';

@@ -1,0 +1,12 @@
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  & > div {
+    position: unset !important;
+    img {
+      position: unset !important;
+      width: unset !important;
+      height: unset !important;
+    }
+  }
+}

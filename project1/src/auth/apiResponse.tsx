@@ -1,6 +1,0 @@
-export default {
-  1000: "CREATED",
-  4014: "ENTITY_NOT_FOUND",
-  4006: "EMAIl_IN_USE",
-  4015: "VALIDATION_ERROR"
-}

@@ -1,0 +1,81 @@
+// table
+.MuiTableCell-sizeSmall {
+  padding: 15px 20px 15px;
+}
+.MuiTableCell-head {
+  line-height: 1.45;
+}
+
+.record_alias {
+  margin-left: 10px;
+  &.pills {
+    font-weight: 300;
+  }
+}
+
+.table,
+table {
+  font-size: 14px;
+
+  tr {
+    border-bottom: 1px solid #ededed;
+    &:hover {
+      background-color: #ededed;
+    }
+  }
+  th {
+    padding: 10px 2px;
+    vertical-align: middle;
+  }
+  td {
+    padding: 10px 2px;
+    vertical-align: middle;
+  }
+
+  thead {
+    font-weight: 600;
+  }
+
+  .table-content {
+    &-wrapper {
+      position: relative;
+    }
+    &-heading {
+      @include setFont(16px, 1.4, 600);
+      color: #000000;
+      // margin-bottom: 10px;
+      //@include alignDisplay(center);
+      &-logo {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        margin-right: 20px;
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+    &-main {
+      @include setFont(14px, 1.4, 400);
+      color: $color-text-grey;
+      max-width: 500px;
+      // margin-bottom: 10px;
+    }
+    &-link {
+      @include setFont(14px, 1.4, 400);
+      color: $color-blue;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-field {
+      span {
+        display: inline-block;
+        &:first-child {
+          width: 80px;
+        }
+      }
+    }
+  }
+}

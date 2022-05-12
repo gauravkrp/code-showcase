@@ -1,0 +1,9 @@
+# Ignore artifacts:
+node_modules
+public
+.expo
+.expo-shared
+data
+
+# Ignore all HTML files:
+*.html

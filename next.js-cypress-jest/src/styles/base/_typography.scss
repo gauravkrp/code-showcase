@@ -1,0 +1,14 @@
+@mixin setFont(
+  $fontSize: 16px,
+  $lineHeight: 1.5,
+  $fontWeight: 400,
+  $fontStyle: normal,
+  $fontFamily: 'Source Sans Pro'
+) {
+  font: $fontStyle $fontWeight #{$fontSize '/' $lineHeight} $fontFamily;
+}
+
+html,
+body {
+  @include setFont(14px, 20px, 400);
+}

@@ -1,0 +1,128 @@
+button,
+.btn {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  @include userSelectNone();
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  &:hover {
+    opacity: 1;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  &[disabled] {
+    opacity: 0.7;
+    cursor: default;
+    filter: grayscale(1);
+  }
+}
+
+.btn-eg {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 21px;
+  border-radius: 4px;
+  letter-spacing: 0.12px;
+  height: 50px;
+  line-height: 50px;
+  box-shadow: rgba(50, 50, 50, 0.1) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 6px 16px;
+  &:hover {
+    color: initial;
+    box-shadow: rgba(50, 50, 50, 0.2) 0px 16px 32px, rgba(0, 0, 0, 0.1) 0px 8px 16px;
+  }
+}
+
+.btn-outline {
+  border: 1px solid #ccc;
+  &:hover {
+    background: $color-blue;
+    color: #ffffff;
+  }
+}
+
+.btn-dashed {
+  border: 1px dashed $primary;
+  &:hover {
+    background: $primary;
+    color: #ffffff;
+  }
+}
+
+.btn-removeRepeater {
+  align-self: center;
+  justify-self: center;
+  .image-wrapper > div img {
+    width: 20px !important;
+  }
+}
+
+.btn-sleek {
+  font-size: 14px;
+  height: 34px;
+  line-height: 32px;
+  padding: 0 16px;
+  min-width: 80px;
+}
+
+.btn-pri {
+  background: $color-red;
+  color: $color-white !important;
+  &:hover {
+    color: $color-white !important;
+  }
+}
+
+.btn-sec {
+  background: $color-white;
+  font-weight: 500;
+}
+
+.btn-blue {
+  background: $color-blue;
+  font-weight: 500;
+  color: $color-white;
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.btn-red {
+  background: $color-red;
+  font-weight: 500;
+  color: $color-white;
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.btn-black {
+  background: $color-black;
+  font-weight: 500;
+  color: $color-white;
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.btn-large {
+  width: 300px;
+  height: 50px;
+}
+
+.btnGroup {
+  .btn:not(:last-child) {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,84 @@
+@import './base/typography';
+
+$color-text: #0a3049;
+$btn-bg: #e11f26;
+$white: #ffffff;
+$error: #ed684e;
+
+.page-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-heading {
+  @include setFont(20px, 24px, 600);
+  margin-bottom: 24px;
+}
+
+.form {
+  max-width: 600px;
+  .form-control {
+    margin: 30px 0;
+    label {
+      display: block;
+      margin-bottom: 6px;
+      @include setFont(14px, 20px, 600);
+    }
+    input,
+    textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $color-text;
+      @include setFont(18px, 24px, 400);
+      &:focus {
+        outline: none;
+      }
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+  .error {
+    color: $error;
+    margin-top: 4px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.form-msg {
+  margin-top: 10px;
+}
+.msg {
+  &-success {
+    color: green;
+  }
+  &-error {
+    color: $error;
+  }
+}
+
+.btn,
+button {
+  -webkit-appearance: none;
+  cursor: pointer;
+  border: none;
+  &[disabled] {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.submit-btn {
+  width: 240px;
+  height: 48px;
+
+  background: $btn-bg;
+  border-radius: 2px;
+  color: $white;
+  @include setFont(16px, 22.4px);
+}

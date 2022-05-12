@@ -1,0 +1,41 @@
+.tags_container {
+  overflow: scroll;
+  width: 100%;
+  max-width: 100%;
+  color: black;
+  .tags_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  input {
+    width: 100%;
+    min-width: 50%;
+    border: none;
+    border-radius: 5px;
+    padding: 14px;
+    padding-left: 14px;
+    display: block;
+  }
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  margin: 7px 0;
+  margin-right: 10px;
+  padding: 0 7px;
+  padding-right: 5px;
+  border-radius: 4px;
+  background-color: orange;
+  white-space: nowrap;
+  color: white;
+  font-size: 14px;
+  button {
+    display: flex;
+    padding: 6px;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+    color: white;
+  }
+}

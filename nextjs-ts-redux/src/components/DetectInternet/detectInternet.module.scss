@@ -1,0 +1,27 @@
+//detect internet
+
+$color-orange: #ec5c27;
+
+.internet-detect {
+  position: fixed;
+  z-index: 10000;
+  .internet-error {
+    z-index: 10000;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background: $color-orange;
+    padding: 10px 16px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 16px 2px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 500px;
+    width: 90%;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+  }
+}

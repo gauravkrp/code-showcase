@@ -1,0 +1,106 @@
+// url(#{$cloudfrontURL}/fonts/sanz/RNSSanz-Light.woff2)
+:root {
+  --font-apercu: 'Apercu Pro', sans-serif;
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  font-display: auto;
+  font-style: normal;
+  font-weight: 200;
+  src: url('/assets/fonts/apercu_pro/Apercu-Pro-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/apercu_pro/Apercu-Pro-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  font-display: auto;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/apercu_pro/Apercu-Pro-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  font-display: auto;
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/fonts/apercu_pro/Apercu-Pro-Bold.woff') format('woff');
+}
+
+$fonts: (10, 11, 12, 14, 16, 18, 20, 24, 36, 40, 44, 48, 50, 55, 60);
+@mixin font-classes {
+  @each $i in $fonts {
+    .f-#{$i} {
+      font-size: #{$i}px;
+    }
+  }
+}
+@include font-classes;
+
+$font-weights: (100, 200, 300, 400, 500, 600, 700);
+@mixin font-weight {
+  @each $i in $font-weights {
+    .f-#{$i} {
+      font-weight: #{$i};
+    }
+  }
+}
+@include font-weight;
+
+.color-white {
+  color: $color-white;
+}
+.color-black {
+  color: $color-black;
+}
+.color-red {
+  color: $color-red;
+}
+.color-blue {
+  color: $color-blue;
+}
+.color-dull {
+  color: $color-dull;
+}
+.color-text-light {
+  color: $color-text-light;
+}
+.color-text-grey {
+  color: $color-text-grey;
+}
+.color-text-dark {
+  color: $color-text-dark;
+}
+
+.txt-tr-uc {
+  text-transform: uppercase;
+}
+
+@for $i from 1 through 9 {
+  .fw#{$i}00 {
+    font-weight: ($i * 100);
+  }
+}
+@for $i from 1 through 60 {
+  .fs#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+@mixin setFont(
+  $fontSize: 16px,
+  $lineHeight: 1.5,
+  $fontWeight: 400,
+  $fontStyle: normal,
+  $fontFamily: 'Apercu Pro'
+) {
+  font: $fontStyle $fontWeight #{$fontSize '/' $lineHeight} $fontFamily;
+}

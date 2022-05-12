@@ -1,0 +1,8 @@
+{
+  "extends": ["next", "next/core-web-vitals", "plugin:jsx-a11y/recommended", "prettier"],
+  "rules": {
+    "@next/next/no-document-import-in-page": "off",
+    "react/display-name": "off"
+  },
+  "plugins": ["jsx-a11y"]
+}

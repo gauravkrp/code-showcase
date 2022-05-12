@@ -1,0 +1,40 @@
+@mixin zero-pm {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin reset-list {
+  @include zero-pm();
+  list-style: none;
+}
+
+@mixin pseudoAB {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin box-shadow($x: 0, $y: 0, $blur-radius: 2px, $spread-radius: 2px, $alpha: 0.1) {
+  box-shadow: $x $y $blur-radius $spread-radius rgba($color: $color-black, $alpha: $alpha);
+}
+
+@mixin alignDisplay($align: center, $justify: flex-start, $flexDir: row, $flexWrap: wrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $flexDir;
+  flex-wrap: $flexWrap;
+}
+
+@mixin userSelectNone {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin coverBG($url) {
+  background: transparent url(#{$url}) center center/cover no-repeat;
+}
